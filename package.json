@@ -1,0 +1,41 @@
+{
+  "name": "hello-vue",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "better-scroll": "^1.15.2",
+    "element-ui": "^2.12.0",
+    "gsap": "^2.1.3",
+    "hammerjs": "2.0.8",
+    "infinite-tree": "^1.16.2",
+    "js-cookie": "^2.2.1",
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0",
+    "normalize.css": "^8.0.1",
+    "vue": "^2.6.10",
+    "vue-infinite-loading": "^2.4.4",
+    "vue-router": "^3.1.3",
+    "vue-virtual-scroller": "^1.0.0-rc.2",
+    "vuex": "^3.1.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.11.0",
+    "@vue/cli-plugin-eslint": "^3.11.0",
+    "@vue/cli-service": "^3.11.0",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.3.0",
+    "eslint-plugin-vue": "^5.2.3",
+    "html-webpack-tags-plugin": "^2.0.15",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^8.0.0",
+    "stylus": "^0.54.7",
+    "stylus-loader": "^3.0.2",
+    "vue-template-compiler": "^2.6.10"
+  }
+}

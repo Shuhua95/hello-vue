@@ -1,0 +1,64 @@
+/* fix jumping scrollbar */
+html
+  overflow-y scroll
+
+:root
+  overflow-y auto
+  overflow-x hidden
+
+:root body
+  position absolute
+
+body
+  width 100vw
+  overflow hidden
+
+
+html
+  box-sizing border-box
+  -webkit-overflow-scrolling touch
+
+*
+::after
+::before
+  box-sizing inherit
+
+body
+  min-height 100vh
+  font-family -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei",
+    Roboto, "Helvetica Neue"
+
+iframe
+img
+object
+video
+  max-width 100%
+
+button
+  cursor pointer
+  outline none
+  background-color transparent
+  border none
+
+ul
+  margin 0
+  padding 0
+  list-style none
+
+a
+  text-decoration none
+  color inherit
+  transition color 0.2s cubic-bezier(0.4, 0, 0.2, 1)
+  outline none
+
+img
+  border none
+
+.page-enter-active
+/* .page-leave-active */
+  transition all .3s cubic-bezier(0.4, 0.0, 0.2, 1)
+
+.page-enter
+.page-leave-to
+  opacity 0
+  transform translateY(30px)
