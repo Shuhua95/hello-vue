@@ -38,6 +38,7 @@ const routes = [
   { to: '/tween', label: 'Tween' },
   { to: '/bootstrap', label: 'Bootstrap' },
   { to: '/about', label: 'About' },
+  { to: '/grid', label: 'Grid' },
   { href: '/sass', label: 'Sass' },
   { href: '/infinite', label: 'Infinite' },
 ]

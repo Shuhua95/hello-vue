@@ -1,4 +1,7 @@
 const HtmlWebpackTagsPlugin = require('html-webpack-tags-plugin')
+const path = require('path')
+const PrerenderSPAPlugin = require('prerender-spa-plugin')
+const Renderer = PrerenderSPAPlugin.PuppeteerRenderer
 
 const isProd = process.env.NODE_ENV === 'production'
 
@@ -11,12 +14,13 @@ const pages = {
     filename: 'infinite.html',
   },
   sass: 'src/sass/main.js',
+  mobile: 'src/mobile/main.js',
 }
 
 const dependencies = require('./package.json').dependencies
-const getVersion = packageName => typeof dependencies[packageName] === 'string' ?
+const getVersion = packageName => dependencies[packageName] ?
   dependencies[packageName].replace(/^(>=|>|<=|<|~|\^)/, '') :
-  console.log(`not found package: ${packageName}`)
+  console.error(`not found package: ${packageName}`)
 
 module.exports = {
   pages,
@@ -61,6 +65,22 @@ module.exports = {
             lodash: '_',
             moment: 'moment',
           })
+
+          config.plugin('prerender-spa')
+            .use(PrerenderSPAPlugin, [
+              {
+                staticDir: path.join(__dirname, 'dist'),
+                routes: [ '/tween' ],
+
+                renderer: new Renderer({
+                  inject: {
+                    foo: 'bar'
+                  },
+                  headless: true,
+                  renderAfterDocumentEvent: 'render-event',
+                })
+              }
+            ])
         }
       )
 

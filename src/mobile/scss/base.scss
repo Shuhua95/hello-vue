@@ -1,0 +1,84 @@
+html {
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+}
+
+*,
+::after,
+::before {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei',
+    Roboto, 'Helvetica Neue';
+}
+
+iframe,
+img,
+object,
+video {
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+  background-color: transparent;
+  border: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+}
+
+img {
+  border: none;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  font-size: 1em;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* gennerator  .is-left .is-center .is-right */
+@each $var in left, center, right {
+  .is-#{$var} {
+    text-align: #{$var};
+  }
+}
+
+/* 文本两端对齐 */
+.text-align-justify {
+  text-align: justify;
+
+  &::after {
+    content: " ";
+    display: inline-block;
+    width: 100%;
+    height: 0;
+  }
+}
+
+.text-overflow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -35,5 +35,10 @@ export default new Router({
       component: () =>
         import(/* webpackChunkName: "bootstrap" */ './views/Bootstrap.vue'),
     },
+    {
+      path: '/grid',
+      name: 'grid',
+      component: () => import('@/views/Grid.vue')
+    },
   ],
 })
