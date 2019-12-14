@@ -40,6 +40,8 @@
         <el-button type="primary" @click="visible = false">确 定</el-button>
       </span>
     </el-dialog>
+
+    <el-button @click="openDialog">openDialog</el-button>
   </div>
 </template>
 
@@ -56,7 +58,7 @@ export default {
   name: "about",
   components: {
     Test
-    /* ElTree */
+    /* ElTree, */
   },
   data() {
     Object.assign(this, {
@@ -372,6 +374,41 @@ export default {
     this.debouncedFilter = debounce(this.filter, 500);
   },
   methods: {
+    openDialog() {
+      this.dialog =
+        this.dialog ||
+        this.$dialog({
+          props: {
+            title: "hello dialog",
+            center: true,
+            "custom-class": "c__dialog",
+            "before-close": function(done) {
+              console.log("before-close");
+              setTimeout(() => done(), 2000);
+            }
+          },
+          children: {
+            content: () => import("@/components/DialogContent"),
+            footer: () => import("@/components/DialogFooter")
+          },
+          event: {
+            open() {
+              console.log("open");
+            },
+            opened() {
+              console.log("opened");
+            },
+            close() {
+              console.log("close");
+            },
+            closed() {
+              console.log("closed");
+            }
+          }
+        });
+
+      this.dialog.open();
+    },
     handleClick() {
       this.$store.dispatch("fetchCategory", 1);
     },

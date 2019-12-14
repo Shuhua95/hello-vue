@@ -1,5 +1,6 @@
 import Vue from 'vue'
-
+import Dialog from '@/components/Dialog'
+Vue.use(Dialog)
 // import 'normalize.css'
 
 import ElementUI from 'element-ui'
@@ -21,8 +22,12 @@ import moment from 'moment'
 moment.locale('zh-cn')
 
 Object.defineProperties(Vue.prototype, {
-  axios: { value: axios },
-  moment: { value: moment },
+  axios: {
+    value: axios
+  },
+  moment: {
+    value: moment
+  },
 })
 
 new Vue({
