@@ -1,28 +1,16 @@
 <template>
-  <div
-    id="app"
-    ref="app"
-  >
+  <div id="app" ref="app">
     <nav id="nav">
       <template v-for="item in routes">
-        <router-link
-          v-if="item.to"
-          :key="item.label"
-          :to="item.to"
-        >{{ item.label }}</router-link>
-        <a
-          v-else
-          :key="item.label"
-          :href="item.href"
-        >{{ item.label }}</a>
+        <router-link v-if="item.to" :key="item.label" :to="item.to">{{
+          item.label
+        }}</router-link>
+        <a v-else :key="item.label" :href="item.href">{{ item.label }}</a>
       </template>
     </nav>
     <main id="main" ref="routerView">
       <transition :name="transitionName">
-        <router-view
-          class="router-view"
-          :style="routerViewStyle"
-        />
+        <router-view class="router-view" :style="routerViewStyle" />
       </transition>
     </main>
   </div>
@@ -154,7 +142,6 @@ export default {
   },
 }
 </script>
-
 
 <style lang="stylus">
 html,

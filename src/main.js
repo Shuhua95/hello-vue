@@ -23,10 +23,10 @@ moment.locale('zh-cn')
 
 Object.defineProperties(Vue.prototype, {
   axios: {
-    value: axios
+    value: axios,
   },
   moment: {
-    value: moment
+    value: moment,
   },
 })
 
