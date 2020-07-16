@@ -16,7 +16,7 @@
     "hammerjs": "2.0.8",
     "infinite-tree": "^1.16.2",
     "js-cookie": "^2.2.1",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "moment": "^2.24.0",
     "normalize.css": "^8.0.1",
     "vue": "^2.6.10",
